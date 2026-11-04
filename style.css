@@ -1,0 +1,882 @@
+/* =========================
+   CAI DAT CHUNG
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green-dark: #183f35;
+  --green: #2f6b50;
+  --green-light: #dcebdc;
+  --cream: #fffaf0;
+  --gold: #e5b85c;
+  --text: #284238;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  padding: 45px 18px 25px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--text);
+  background: #a9cfae;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =========================
+   BACKGROUND KHU RUNG
+========================= */
+
+.forest-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 20%,
+      rgba(255, 245, 190, 0.85),
+      transparent 27%
+    ),
+    linear-gradient(180deg, #a9cfae 0%, #d8e8c5 52%, #6e986c 100%);
+}
+
+.sun {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(255, 230, 153, 0.42);
+  top: 7%;
+  left: calc(50% - 95px);
+  filter: blur(5px);
+}
+
+.mountains {
+  position: absolute;
+  bottom: 18%;
+  left: -10%;
+  width: 120%;
+  height: 38%;
+
+  background: linear-gradient(145deg, #789d78, #b0c89a);
+
+  clip-path: polygon(
+    0 75%,
+    16% 28%,
+    29% 68%,
+    47% 12%,
+    66% 70%,
+    82% 30%,
+    100% 78%,
+    100% 100%,
+    0 100%
+  );
+
+  opacity: 0.8;
+}
+
+.tree-line {
+  position: absolute;
+  width: 120%;
+  left: -10%;
+  bottom: 0;
+  white-space: nowrap;
+  font-size: clamp(45px, 8vw, 100px);
+  opacity: 0.8;
+}
+
+.fireflies {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width: 84%;
+  color: #fff3a8;
+  font-size: 25px;
+  text-shadow: 0 0 12px #fff2a0;
+  letter-spacing: 25px;
+}
+
+/* =========================
+   KHUNG NOI DUNG
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: rgba(255, 250, 240, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 28px;
+  box-shadow: 0 18px 55px rgba(31, 67, 47, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* =========================
+   TRANG CHU
+========================= */
+
+.home-panel {
+  text-align: center;
+  padding: 55px 55px 50px;
+  margin: 20px auto 40px;
+}
+
+.brand {
+  display: inline-block;
+  color: var(--green);
+  background: #e5efdc;
+  border-radius: 30px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #9b7836;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 13px;
+}
+
+.home-panel h1 {
+  color: var(--green-dark);
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 5vw, 53px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.home-panel h1 span {
+  color: #a66e36;
+  font-style: italic;
+}
+
+.intro {
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #607368;
+  font-size: 16px;
+}
+
+.animal-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin: 32px 0 24px;
+}
+
+.animal-gallery img {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow: 0 5px 14px rgba(35, 76, 49, 0.16);
+  transition: transform 0.25s ease;
+}
+
+.animal-gallery img:hover {
+  transform: translateY(-8px) rotate(-5deg);
+}
+
+.home-note {
+  color: #718477;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.primary-button {
+  border: none;
+  border-radius: 40px;
+
+  background: linear-gradient(135deg, #2f7653, #1f523e);
+
+  color: white;
+  padding: 16px 31px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(38, 94, 62, 0.25);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(38, 94, 62, 0.32);
+}
+
+/* =========================
+   TRANG KHAO SAT
+========================= */
+
+.survey-panel {
+  padding: 42px clamp(18px, 5vw, 55px);
+  margin: 20px auto 40px;
+}
+
+.survey-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.survey-heading h2,
+.result-panel h2 {
+  color: var(--green-dark);
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 4vw, 38px);
+  margin-bottom: 12px;
+}
+
+.survey-heading p {
+  color: #718477;
+  line-height: 1.6;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: bold;
+  margin: 25px 0 9px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #e4eadd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#tien-trinh {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #8cae65, #d4ad59);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.question-card {
+  background: #fffdf7;
+  border: 1px solid #e4e9d9;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 5px 17px rgba(45, 78, 52, 0.06);
+}
+
+.question-number {
+  display: inline-block;
+  color: #8b713b;
+  background: #f5edda;
+  border-radius: 20px;
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.question-card h3 {
+  color: #294d3c;
+  font-size: 18px;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.question-image {
+  display: block;
+  width: 125px;
+  height: 105px;
+  object-fit: contain;
+  margin: 0 auto 18px;
+}
+
+.answer-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 12px 14px;
+
+  border: 1.5px solid #e2e8dc;
+  border-radius: 13px;
+
+  color: #53675a;
+  line-height: 1.45;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.answer-option:hover {
+  background: #f0f5e9;
+  border-color: #91ad7b;
+  transform: translateY(-2px);
+}
+
+.answer-option input {
+  accent-color: #397653;
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+}
+
+.answer-option.selected {
+  background: #e7f1df;
+  border-color: #5e956a;
+  color: #28563c;
+  font-weight: bold;
+}
+
+.answer-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #edf1e6;
+  color: #52734e;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.survey-bottom {
+  text-align: center;
+  padding-top: 12px;
+}
+
+.survey-bottom p {
+  margin-top: 13px;
+  color: #849187;
+  font-size: 13px;
+}
+
+/* =========================
+   TRANG KET QUA
+========================= */
+
+.result-panel {
+  padding: 45px clamp(18px, 5vw, 55px);
+  margin: 20px auto 40px;
+  text-align: center;
+}
+
+.winner-card {
+  max-width: 580px;
+  margin: 25px auto 30px;
+  padding: 30px;
+  background: #f2f6e9;
+  border: 1px solid #dce8d1;
+  border-radius: 23px;
+}
+
+.winner-label {
+  color: #8b713b;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.winner-image {
+  display: block;
+  width: 190px;
+  height: 170px;
+  object-fit: contain;
+  margin: 12px auto;
+}
+
+.winner-english {
+  color: #87977f;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.winner-card h3 {
+  color: var(--green-dark);
+  font-family: Georgia, serif;
+  font-size: 35px;
+  margin: 8px 0 13px;
+}
+
+.winner-description {
+  color: #596e5d;
+  line-height: 1.8;
+}
+
+.winner-score {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 9px 16px;
+  background: #fffaf0;
+  border-radius: 30px;
+  color: #5d714f;
+}
+
+.score-section {
+  max-width: 580px;
+  margin: 0 auto 28px;
+  text-align: left;
+}
+
+.score-section h3 {
+  color: var(--green-dark);
+  margin-bottom: 8px;
+}
+
+.score-section > p {
+  color: #78877b;
+  font-size: 13px;
+  margin-bottom: 17px;
+}
+
+.score-row {
+  display: grid;
+  grid-template-columns: 75px 1fr 25px;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  color: #53675a;
+  font-size: 14px;
+}
+
+.score-bar {
+  height: 11px;
+  background: #e5eadf;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.score-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #8cae65, #d4ad59);
+  border-radius: 20px;
+}
+
+.score-number {
+  text-align: right;
+  font-weight: bold;
+}
+
+.secondary-button {
+  border: 1.5px solid #5d8b65;
+  background: transparent;
+  color: #386748;
+  padding: 13px 24px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.secondary-button:hover {
+  background: #e7f1df;
+}
+
+.disclaimer {
+  max-width: 570px;
+  margin: 22px auto 0;
+  color: #89948a;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  color: #f8fff1;
+  text-shadow: 0 1px 4px rgba(26, 59, 38, 0.6);
+  font-size: 12px;
+  padding: 8px 0 15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+  body {
+    padding: 15px 10px 20px;
+  }
+
+  .home-panel {
+    padding: 38px 20px;
+  }
+
+  .survey-panel,
+  .result-panel {
+    padding: 30px 15px;
+  }
+
+  .animal-gallery {
+    gap: 8px;
+  }
+
+  .animal-gallery img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .answer-list {
+    grid-template-columns: 1fr;
+  }
+
+  .question-card {
+    padding: 19px 15px;
+  }
+
+  .question-card h3 {
+    font-size: 16px;
+  }
+
+  .winner-card {
+    padding: 22px 16px;
+  }
+}
+
+/* =================================
+   ANIMATION KHU RUNG
+================================= */
+
+/* Chuyen dong anh sang cua background */
+.forest-background {
+  animation: forestGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes forestGlow {
+  from {
+    filter: brightness(0.95);
+  }
+
+  to {
+    filter: brightness(1.08);
+  }
+}
+
+/* Anh nang lung linh */
+.sun {
+  animation: sunPulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes sunPulse {
+  from {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  to {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+/* Dom dom */
+.fireflies {
+  animation: firefly 4s ease-in-out infinite alternate;
+}
+
+@keyframes firefly {
+  from {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-18px);
+  }
+}
+
+/* =================================
+   ANIMATION TRANG CHU
+================================= */
+
+.home-panel {
+  animation: appearUp 0.9s ease both;
+}
+
+@keyframes appearUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Anh dong vat tren trang chu */
+.animal-gallery img {
+  animation: animalFloat 3s ease-in-out infinite;
+}
+
+.animal-gallery img:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.animal-gallery img:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.animal-gallery img:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.animal-gallery img:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.animal-gallery img:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+@keyframes animalFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* =================================
+   ANIMATION CAU HOI
+================================= */
+
+.question-card {
+  animation: questionAppear 0.65s ease both;
+}
+
+@keyframes questionAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hieu ung khi di chuot vao dap an */
+.answer-option {
+  position: relative;
+  overflow: hidden;
+}
+
+.answer-option:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 7px 18px rgba(47, 107, 80, 0.12);
+}
+
+/* Dap an duoc chon */
+.answer-option.selected {
+  background: #e3f1df;
+  border-color: #4c9564;
+  box-shadow: 0 0 0 3px rgba(76, 149, 100, 0.12);
+  animation: answerSelected 0.3s ease;
+}
+
+@keyframes answerSelected {
+  0% {
+    transform: scale(0.97);
+  }
+
+  60% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Thanh tien trinh */
+#tien-trinh {
+  transition: width 0.5s ease;
+}
+
+/* Nut bam */
+.primary-button,
+.secondary-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-button:active,
+.secondary-button:active {
+  transform: scale(0.96);
+}
+
+/* =================================
+   ANIMATION KET QUA
+================================= */
+
+.result-panel {
+  animation: resultAppear 0.9s ease both;
+}
+
+@keyframes resultAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.winner-card {
+  animation: winnerReveal 1s ease both;
+}
+
+@keyframes winnerReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.winner-image {
+  animation: winnerFloat 3s ease-in-out infinite;
+}
+
+@keyframes winnerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Cac thanh diem lan luot xuat hien */
+.score-row {
+  animation: scoreAppear 0.6s ease both;
+}
+
+.score-row:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.score-row:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.score-row:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.score-row:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.score-row:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+@keyframes scoreAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Ho tro nguoi dung tat hieu ung chuyen dong */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* Khung nền cho hình động vật */
+.winner-image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  padding: 15px;
+  border-radius: 25px;
+
+  background: radial-gradient(circle, #ffffff 0%, #e5efd9 65%, #c9d9b8 100%);
+
+  box-shadow: 0 8px 25px rgba(48, 77, 53, 0.15);
+  display: block;
+  margin: 15px auto 25px;
+}
+/* Khung nền cho hình động vật */
+.winner-image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  padding: 15px;
+  border-radius: 25px;
+
+  background: radial-gradient(circle, #ffffff 0%, #e5efd9 65%, #c9d9b8 100%);
+
+  box-shadow: 0 8px 25px rgba(48, 77, 53, 0.15);
+  display: block;
+  margin: 15px auto 25px;
+}

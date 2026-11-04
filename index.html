@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal Personality - Bạn giống loài động vật nào?</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Ket noi thu vien jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Ket noi file JavaScript cua du an -->
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="forest-background">
+      <div class="sun"></div>
+      <div class="mountains"></div>
+      <div class="tree-line">🌲　🌳　🌲　🌳　🌲　🌳　🌲</div>
+      <div class="fireflies">✦　 ·　 ✧　　 ·　 ✦</div>
+    </div>
+
+    <main class="container">
+      <!-- TRANG CHU -->
+      <section id="trang-chu" class="panel home-panel">
+        <div class="brand">🌿 FOREST PERSONALITY</div>
+
+        <div class="eyebrow">A LITTLE JOURNEY INTO YOU</div>
+
+        <h1>
+          Trong khu rừng này,
+          <br />
+          <span>bạn là loài vật nào?</span>
+        </h1>
+
+        <p class="intro">
+          Mỗi loài vật đều có một nét tính cách riêng. Hãy trả lời 20 câu hỏi
+          nhỏ để khám phá xem bạn mang tâm hồn của loài vật nào nhé!
+        </p>
+
+        <div class="animal-gallery">
+          <img src="img/meo.png" alt="Mèo" />
+          <img src="img/cho.png" alt="Chó" />
+          <img src="img/cao.png" alt="Cáo" />
+          <img src="img/cu_meo.png" alt="Cú mèo" />
+          <img src="img/tho.png" alt="Thỏ" />
+          <img src="img/gau.png" alt="Gấu" />
+        </div>
+
+        <div class="home-note">
+          🍃 20 câu hỏi · Khoảng 3–5 phút · Chỉ để giải trí
+        </div>
+
+        <button id="btn-bat-dau" class="primary-button" type="button">
+          Bắt đầu khám phá →
+        </button>
+      </section>
+
+      <!-- TRANG KHAO SAT -->
+      <section id="khao-sat" class="panel survey-panel" style="display: none">
+        <div class="survey-heading">
+          <div class="eyebrow">YOUR FOREST JOURNEY</div>
+
+          <h2>Khám phá tính cách của bạn</h2>
+
+          <p>Chọn đáp án giống với bạn nhất. Không có đúng hay sai đâu!</p>
+
+          <div class="progress-info">
+            <span id="dem-cau-hoi">Đã trả lời: 0/20 câu</span>
+            <span id="phan-tram">0%</span>
+          </div>
+
+          <div class="progress-track">
+            <div id="tien-trinh"></div>
+          </div>
+        </div>
+
+        <div id="danh-sach-cau-hoi"></div>
+
+        <div class="survey-bottom">
+          <button id="btn-xem-ket-qua" class="primary-button" type="button">
+            Xem kết quả của tôi ✨
+          </button>
+
+          <p>Bạn cần trả lời đủ 20 câu để xem kết quả.</p>
+        </div>
+      </section>
+
+      <!-- TRANG KET QUA -->
+      <section id="ket-qua" class="panel result-panel" style="display: none">
+        <div class="eyebrow">YOUR FOREST SPIRIT</div>
+
+        <h2>Kết quả của bạn đây!</h2>
+
+        <div id="thong-tin-ket-qua"></div>
+
+        <button id="btn-lam-lai" class="secondary-button" type="button">
+          ↻ Làm lại khảo sát
+        </button>
+
+        <p class="disclaimer">
+          Kết quả chỉ mang tính giải trí và tự khám phá bản thân, không phải
+          đánh giá tâm lý khoa học.
+        </p>
+      </section>
+    </main>
+
+    <footer>Made with 🌱 and a little curiosity</footer>
+
+    <!-- jQuery phải được tải trước main.js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
